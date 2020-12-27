@@ -28,5 +28,5 @@ function Authenticate(req,res,next)
 
 API.use('/crud',Authenticate,CRUD);
 
-const port = process.env.PORT |3000;
+const port = process.env.PORT;
 API.listen(port);
