@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
 const cors = require("cors");
 const API = express();
+var CRUD = require("./routes/CRUD.js");
 
 require('dotenv/config');
 
@@ -25,8 +25,6 @@ function Authenticate(req,res,next)
         }).send();
     }
 }
-
-var CRUD = require("./routes/CRUD.js");
 
 API.use('/crud',Authenticate,CRUD);
 
